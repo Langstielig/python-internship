@@ -1,25 +1,13 @@
 # python-internship
 
-Установка Python3.10
+Загрузка модели:
+python3 download_models.py
 
-- brew install python@3.10
+Создание Docker образа:
+docker image build . --tag fast_api:with_volume
 
-Создание виртуального окружения
+Запуск приложения внутри Docker контейнера
+docker container run --publish 4600:1702 -v ./models:/project/models -v ./logs:/project/logs fast_api:with_volume
 
-- python3.10 -m venv .venv_assistant
-
-Запуск виртуального окружения
-
-- source .venv_assistant/bin/activate
-
-Установка библиотек
-
-- pip install -r requirements.txt
-
-Для загрузки моделей нужно выполнить команду
-
-- python3 download_model.py
-
-Запуск fastapi сервиса
-
-- uvicorn assistant_service.main:app --reload
+Открыть приложение по следующей ссылке:
+http://localhost:4600/docs
