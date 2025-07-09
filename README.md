@@ -1,7 +1,19 @@
 # python-internship
 
+### Создание виртуального окружения:
+python -m venv venv
+
+### Запуск виртуального окружения:
+.\venv\Scripts\Activate.ps1
+
+### Установка библиотек:
+pip install -r .\requirements.txt
+
 ### Загрузка модели:
 python3 download_models.py
+
+### Запуск fastapi сервиса
+uvicorn fast_api_app:app --reload
 
 ### Создание Docker образа:
 docker image build . --tag fast_api:with_volume
