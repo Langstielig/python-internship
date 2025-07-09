@@ -12,8 +12,15 @@ pip install -r .\requirements.txt
 ### Загрузка модели:
 python3 download_models.py
 
+# 1 Вариант
+
 ### Запуск fastapi сервиса
 uvicorn fast_api_app:app --reload
+
+### Открыть приложение по следующей ссылке
+http://127.0.0.1:8000/docs
+
+# 2 Вариант
 
 ### Создание Docker образа:
 docker image build . --tag fast_api:with_volume
